@@ -1,0 +1,15 @@
+log4j.logger.logsjava = DEBUG , appenderGeneral
+log4j.logger.logsjava.UserController = DEBUG , appenderController
+
+log4j.appender.appenderGeneral = org.apache.log4j.RollingFileAppender
+log4j.appender.appenderGeneral.file = log/general.log
+log4j.appender.appenderGeneral.MaxFileSize=5MB
+log4j.appender.appenderGeneral.layout=org.apache.log4j.PatternLayout
+log4j.appender.appenderController.A1.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:s}] [ %-5p] [%c{1}:L] %m%n
+
+
+log4j.appender.appenderController = org.apache.log4j.RollingFileAppender
+log4j.appender.appenderController.A1.file = log/controller.log
+log4j.appender.appenderController.MaxFileSize=5MB
+log4j.appender.appenderController.layout=org.apache.log4j.PatternLayout
+log4j.appender.appenderController.A1.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss}] [ %-5p] [%c{1}:L] %m%n

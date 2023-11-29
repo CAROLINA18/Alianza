@@ -1,0 +1,23 @@
+
+
+
+@media (max-width: 994px) {
+    .container_buttons__actions--new{
+        margin-right: 3%;
+    }
+
+}
+@media (min-width: 995px) {
+    .container_buttons{
+        display: inline-block;
+        width:40%;
+        height: auto;
+        margin-top: 8%;      
+    }
+
+    .container_buttons__actions--new{
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+
+}

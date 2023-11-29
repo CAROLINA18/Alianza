@@ -1,0 +1,8 @@
+[2023-11-28 21:21:31] [ INFO ] [DemoApplication:16] Info log message
+ [ INFO ] [DemoApplication:L] Info log message
+[2023-11-28 21:21:41] [ INFO ] [UserController:63] ANA3
+ [ INFO ] [UserController:L] ANA3
+[2023-11-28 21:21:43] [ DEBUG] [UserController:33] [User [id=981e06bb-1282-4294-a4e5-09a14440f848, name=ANA3, phone=123, email=Ana@y.com, startDate=Sat Dec 31 19:00:00 COT 1994, endDate=Wed Feb 01 19:00:00 COT 1995]]
+ [ DEBUG] [UserController:L] [User [id=981e06bb-1282-4294-a4e5-09a14440f848, name=ANA3, phone=123, email=Ana@y.com, startDate=Sat Dec 31 19:00:00 COT 1994, endDate=Wed Feb 01 19:00:00 COT 1995]]
+[2023-11-28 21:21:43] [ INFO ] [UserController:34] [User [id=981e06bb-1282-4294-a4e5-09a14440f848, name=ANA3, phone=123, email=Ana@y.com, startDate=Sat Dec 31 19:00:00 COT 1994, endDate=Wed Feb 01 19:00:00 COT 1995]]
+ [ INFO ] [UserController:L] [User [id=981e06bb-1282-4294-a4e5-09a14440f848, name=ANA3, phone=123, email=Ana@y.com, startDate=Sat Dec 31 19:00:00 COT 1994, endDate=Wed Feb 01 19:00:00 COT 1995]]

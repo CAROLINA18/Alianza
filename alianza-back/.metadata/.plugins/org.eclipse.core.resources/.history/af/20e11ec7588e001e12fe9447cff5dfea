@@ -1,0 +1,3 @@
+
+log4j.logger.logsjava = DEBUG , appenderGeneral
+log4j.logger.logsjava.UserController = DEBUG , appenderControler

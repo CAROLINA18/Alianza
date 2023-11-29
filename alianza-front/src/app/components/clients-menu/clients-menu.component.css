@@ -1,0 +1,13 @@
+@media (max-width: 600px) {
+    
+}
+@media (min-width: 995px) {
+
+.container_clients {
+    display: inline-block;
+    width: 20%;
+    height: 1000px;
+    float: left;
+    margin-right: 3%;
+}
+}

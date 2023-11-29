@@ -1,0 +1,28 @@
+<div class="container-form">
+    <h3>Create new client</h3>
+    <hr>
+    <form class ="newClient" [formGroup]="newForm" (ngSubmit)="postForm(newForm.value)">
+        <div class="form-group">
+          <br>
+          <label for="name">Name</label>
+          <input type="text" class="form-control" formControlName="name"  placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="number" class="form-control" formControlName="phone"  placeholder="Enter phone">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" formControlName="email"  placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+          <label for="Startdate">Start Date</label>
+          <input type="date" class="form-control" formControlName="startDate"  placeholder="Enter Start Date">
+        </div>
+        <div class="form-group">
+          <label for="Enddate">End Date</label>
+          <input type="date" class="form-control" formControlName="endDate"  placeholder="Enter End Date">
+        </div><br>
+        <button type="submit" class="btn btn-primary">Ok</button>
+      </form><br>
+</div>
