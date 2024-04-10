@@ -1,31 +1,36 @@
+<div class = "container_buttons__actions">
+  <button type="button" class="btn btn-primary container_buttons__actions--new" (click)="openModal()"><fa-icon [icon]="faFile"></fa-icon> New</button>
+  <button type="button" class="btn btn-primary container_buttons__actions--new" (click)="exportToCSV()"><fa-icon [icon]="faArrowRight"></fa-icon> Export</button>
+</div>
+
 <div class = "container_table">
   <div class="form-inline my-2 my-lg-0 container_buttons__actions--form">
     <input class="form-control mr-sm-2 container_buttons__actions--input" type="search" placeholder="Enter shared key"  (keyup)="searchTerm$.next($any($event.target).value)" aria-label="Search">
     <button class="btn btn-primary my-2 my-sm-0 container_buttons__actions--submit container_buttons__actions--form" (click)="searchAdvance()">Advanced search</button>
   </div>
   <div class ="container_buttons">
-    <div class="container_buttons__actions--options" *ngIf="flag==true">
-      <form class ="newClient" >
+    <div class="container_buttons__actions--options" *ngIf="flag==true" >
+      <form  class ="newClient" [formGroup]="formSearch"  (ngSubmit)="searchFields(formSearch.value)">
         <div class="form-group">
           <br>
           <label for="name">Name</label>
-          <input type="text" class="form-control" id="name"  placeholder="Enter name">
+          <input type="text" class="form-control" id="name" formControlName="name"  [(ngModel)]="searchCriteria.name" placeholder="Enter name" required />
         </div>
         <div class="form-group">
           <label for="phone">Phone</label>
-          <input type="number" class="form-control" id="name"  placeholder="Enter phone">
+          <input type="number" class="form-control" id="phone" formControlName="phone"  [(ngModel)]="searchCriteria.phone" placeholder="Enter phone">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" class="form-control" id="email"  placeholder="Enter Email">
+          <input type="email" class="form-control" id="email"  formControlName="email" [(ngModel)]="searchCriteria.email" placeholder="Enter Email">
         </div>
         <div class="form-group">
           <label for="Startdate">Start Date</label>
-          <input type="date" class="form-control" id="startdate"  placeholder="Enter Start Date">
+          <input type="date" class="form-control" id="startdate" formControlName="startDate"  [(ngModel)]="searchCriteria.startDate" placeholder="Enter Start Date">
         </div>
         <div class="form-group">
           <label for="Enddate">End Date</label>
-          <input type="date" class="form-control" id="startdate"  placeholder="Enter End Date">
+          <input type="date" class="form-control" id="enddate" formControlName="endDate" [(ngModel)]="searchCriteria.endDate" placeholder="Enter End Date">
         </div><br>
         <button type="submit" class="btn btn-primary">Ok</button>
       </form><br>

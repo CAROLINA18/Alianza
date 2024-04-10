@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +19,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.model.User;
+import com.example.service.IUserService;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
 @RequestMapping("/user")
 public class UserController {
+	
+	@Autowired
+	private IUserService userService;
 	
 	private static Logger logController = Logger.getLogger(UserController.class);
 	List<User> users;
@@ -47,18 +52,9 @@ public class UserController {
 		user.setEndDate(user.getEndDate());
 		
 		if(users == null) users = new ArrayList<>();
-		String id=UUID.randomUUID().toString();
-		String [] key = user.getName().split(" ");
-		String sharedKey = key[0].substring(0,1);
-		String lastname = "";
-		if(key.length >= 2) {
-			lastname += key[1];
-		}else {
-			 sharedKey = key[0];
-		}	
-		sharedKey = sharedKey + lastname;
+		String sharedKey = userService.keyGenerate(user.getName()); 
 		user.setSharedKey(sharedKey);
-		user.setId(id);
+		user.setId(userService.idGenerate());
 		users.add(user);
 		logController.info(sharedKey);
 		return new ResponseEntity<User>(user , HttpStatus.OK);

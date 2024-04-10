@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HeadComponent } from './components/head/head.component';
 import { ClientsListComponent } from './components/clients-list/clients-list.component';
 import { ClientsMenuComponent } from './components/clients-menu/clients-menu.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,7 +16,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    HeadComponent,
     ClientsListComponent,
     ClientsMenuComponent,
     PopupNewClientComponent
